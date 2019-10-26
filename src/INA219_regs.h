@@ -1,0 +1,42 @@
+#ifndef __INA219_REGS_H
+#define __INA219_REGS_H
+
+#define REG_CONFIG				0x00	// POR:0x399F
+	#define CONFIG_RESET		0x8000
+	#define CONFIG_BRNG_MASK	0x2000
+	#define CONFIG_BRNG_16V		0x0000
+	#define CONFIG_BRNG_32V		0x2000
+	#define CONFIG_PGA_MASK		0x1800
+		#define CONFIG_PGA_DIV1		0x0000
+		#define CONFIG_PGA_DIV2		0x0800
+		#define CONFIG_PGA_DIV4		0x1000
+		#define CONFIG_PGA_DIV8		0x1800
+	#define CONFIG_BADC			7
+	#define CONFIG_BADC_MASK	(0b1111 << CONFIG_BADC)
+		#define CONFIG_ADC_9B		0b0000
+		#define CONFIG_ADC_10B		0b0001
+		#define CONFIG_ADC_11B		0b0010
+		#define CONFIG_ADC_12B		0b0011
+		#define CONFIG_ADC_12B2		0b1000
+		#define CONFIG_ADC_2		0b1001
+		#define CONFIG_ADC_4		0b1010
+		#define CONFIG_ADC_8		0b1011
+		#define CONFIG_ADC_16		0b1100
+		#define CONFIG_ADC_32		0b1101
+		#define CONFIG_ADC_64		0b1110
+		#define CONFIG_ADC_128		0b1111
+	#define CONFIG_SADC			3
+	#define CONFIG_SADC_MASK	(0b1111 << CONFIG_SADC)
+	#define CONFIG_MODE_MASK		0x0007
+	#define CONFIG_MODE_POWERDOWN	0x0000
+	#define CONFIG_MODE_SHUNT		0x0001
+	#define CONFIG_MODE_BUS			0x0002
+	#define CONFIG_MODE_CONT		0x0004
+
+#define REG_SHUNT				0x01
+#define REG_BUS					0x02
+#define REG_POWER				0x03
+#define REG_CURRENT				0x04
+#define REG_CAL					0x05
+
+#endif // __INA219_REGS_H
