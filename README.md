@@ -1,3 +1,3 @@
-Library for the MCP23008 Remote 8-bit IO Expander
+Library for the INA219 Current/Voltage Sensor
 
 Status: Working somewhat
